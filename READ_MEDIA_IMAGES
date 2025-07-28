@@ -1,0 +1,4 @@
+val permiso = Manifest.permission.READ_MEDIA_IMAGES
+
+if (ContextCompat.checkSelfPermission(this, permiso) != PackageManager.PERMISSION_GRANTED) {
+    ActivityCompat.requestPermissions(this, arrayOf(permiso), REQUEST_CODE)
