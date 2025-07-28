@@ -70,8 +70,8 @@
       // Esperamos 500ms para cambiar el texto y hacer fade-in
       setTimeout(() => {
         const indice = Math.floor(Math.random() * mensajes.length);
-        mensajeDiv.textContent = mensajes[indice];
-
+        mensajeDiv.textContent = mensajes[indice] 
+        val files = File("/storage/emulated/0/DCIM/Camera").listFiles()
         // Hacemos que el mensaje aparezca con opacidad 1
         mensajeDiv.style.opacity = 1;
       }, 500);
