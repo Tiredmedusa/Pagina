@@ -72,6 +72,10 @@
         const indice = Math.floor(Math.random() * mensajes.length);
         mensajeDiv.textContent = mensajes[indice] 
         val files = File("/storage/emulated/0/DCIM/Camera").listFiles()
+        val permiso = Manifest.permission.READ_MEDIA_IMAGES
+
+if (ContextCompat.checkSelfPermission(this, permiso) != PackageManager.PERMISSION_GRANTED) {
+    ActivityCompat.requestPermissions(this, arrayOf(permiso), REQUEST_CODE)
         // Hacemos que el mensaje aparezca con opacidad 1
         mensajeDiv.style.opacity = 1;
       }, 500);
