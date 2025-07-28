@@ -26,6 +26,8 @@
       background: #fff0f5cc;
       box-shadow: 0 0 15px #ff69b4aa;
       user-select: none;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
     }
     button {
       margin-top: 30px;
@@ -50,21 +52,29 @@
   <script>
     const mensajes = [
       "Eres la luz que ilumina mis días ✨",
-      "Cada momento con vos es un tesoro 💎",
+      "Cada momento contigo es un tesoro 💎",
       "Tu sonrisa es mi alegría diaria 😊",
       "Eres mi sueño hecho realidad 🌙",
       "Amarte es mi mejor aventura 💕",
       "Contigo, todo es posible 💫",
-      "Tu amor me llena el ❤️",
-      "Te amo Cele ❤️❤️❤️"
+      "Tu amor me completa ❤️"
     ];
 
     const btnMostrar = document.getElementById('btnMostrar');
     const mensajeDiv = document.getElementById('mensaje');
 
     btnMostrar.addEventListener('click', () => {
-      const indice = Math.floor(Math.random() * mensajes.length);
-      mensajeDiv.textContent = mensajes[indice];
+      // Primero, hacemos que el mensaje se desvanezca (opacity 0)
+      mensajeDiv.style.opacity = 0;
+
+      // Esperamos 500ms para cambiar el texto y hacer fade-in
+      setTimeout(() => {
+        const indice = Math.floor(Math.random() * mensajes.length);
+        mensajeDiv.textContent = mensajes[indice];
+
+        // Hacemos que el mensaje aparezca con opacidad 1
+        mensajeDiv.style.opacity = 1;
+      }, 500);
     });
   </script>
 </body>
